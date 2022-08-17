@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/video-player.css">
+    <title>video-player</title>
+</head>
+<body>
+
+<div class="h-100 w-100 container d-flex justify-content-center text-center align-items-center mt-5">
+    <video id="video-player" class="video-player">
+        <source src="<Video Address>"
+                type="video/mkv">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="../js/video-player.js"></script>
+<script>
+    $(document).ready(() => {
+        let video_player = new VideoPlayer({
+            selector: "#video-player",
+            config: {
+                storage: {
+                    captionOffset: false,
+                    playerSpeed: false,
+                    captionSize: false
+                },
+                i18n: {
+                    play: "(پخش:مکث)",
+                    mute: "(بیصدا:با صدا)",
+                    subtitles: "زیرنویس (فعال:غیر فعال)",
+                    config: "تنظیمات",
+                    fullscreen: "(تمام صفحه:خارج شدن) تمام صفحه",
+                    main_topic: "تنظیمات:",
+                    main_caption: "زیر نویس",
+                    main_offset: "سرعت زیر نویس",
+                    main_speed: "سرعت فیلم",
+                    main_disabled: "غیر فعال",
+                    main_default: "پیشفرض",
+                    caption_topic: "زیر نویس ها:",
+                    caption_back: "برگشت",
+                    caption_load: "بارگذاری از حافظه داخلی",
+                    offset_topic: "تنظیم عنوان",
+                    speed_topic: "تنظیم سرعت",
+                }
+            }
+        })
+    })
+</script>
+</body>
+</html>
